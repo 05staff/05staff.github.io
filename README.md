@@ -37,8 +37,8 @@
             Hiiii welcome to my website :D! Wait. Hold up where did you came from? Whatever, enjoy your browses! :)
         </p>
         <ul>
-            <li><b>Join da server:</b>join my server :D https://discord.gg/NsqEmNtQyn </li>
-            <li><b>vibe with me 😎:</b> lets listen to some fire music.</li>
+            <li><b>Join da server:</b> Do some browsing in the website </li>
+            <li><b>vibe with me 😎:</b> Lookout for easter eggs hidden </li>
             </ul>
         
         <p>
