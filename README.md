@@ -47,5 +47,9 @@
     
     </div>
 </body>
+<footer>
+        <p>&copy; 2024 05staff. All rights reserved.</p>
+        <p><a href="https://discord.gg/yourserver">Join our Discord</a></p>
+    </footer>
 </html>
 
