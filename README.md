@@ -30,7 +30,9 @@
 <body>
     <header>
         <a href="https://05staff.github.io">Home</a>
-        <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" target="_blank">Open</a>
+        <a href="https://www.roblox.com/users/3723656832/profile">Roblox Profile</a>
+        <a href="https://discord.com/users/1171508600645099634/" target="_blank">Discord Profile</a>
+        <a href="https://www.xbox.com/en-US/play/user/Momentum247">Xbox Profile</a>
     </header>
     <div class="content">
         <h1>Minecraft: An Endless Adventure</h1>
