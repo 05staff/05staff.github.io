@@ -37,8 +37,9 @@
             Hiiii welcome to my website :D! Wait. Hold up where did you came from? Whatever, enjoy your browses! :)
         </p>
         <ul>
-            <li><b>Join da server:</b> Do some browsing in the website </li>
-            <li><b>vibe with me 😎:</b> Lookout for easter eggs hidden </li>
+            <li><b>Browsing Browses:</b> Do some browsing in the website </li>
+           <li><b>Beep:</b> Boop 🤖 </li>
+            
             </ul>
         
         <p>
