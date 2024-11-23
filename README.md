@@ -35,25 +35,19 @@
         <a href="https://www.xbox.com/en-US/play/user/Momentum247">Xbox Profile</a>
     </header>
     <div class="content">
-        <h1>Minecraft: An Endless Adventure</h1>
+        <h1>05staff's Website </h1>
         <p>
-            Minecraft is a sandbox video game where players can explore a blocky, procedurally-generated 3D world, 
-            discover and extract raw materials, craft tools and items, and build structures or earthworks. 
-            Depending on the game mode, players can also fight computer-controlled "mobs", as well as cooperate with or 
-            compete against other players in the same world.
+            Hiiii welcome to my website :D! Wait. Hold up where did you came from? Whatever, enjoy your browses! :)
         </p>
         <ul>
-            <li><b>Survival Mode:</b> Players must acquire resources to build the world and maintain health.</li>
-            <li><b>Creative Mode:</b> Players have unlimited resources to build with and the ability to fly.</li>
-            <li><b>Adventure Mode:</b> Players can play custom maps created by other players with certain restrictions.</li>
-            <li><b>Spectator Mode:</b> Players can freely move throughout a world without being affected by gravity or world elements.</li>
+            <li><b>Join da server:</b>join my server :D https://discord.gg/NsqEmNtQyn </li>
+            <li><b>vibe with me 😎:</b> lets listen to some fire music.</li>
+
         </ul>
         <p>
-            Minecraft's iconic blocky aesthetic allows for vast creativity, making it a canvas for players to create intricate 
-            structures, complex machines, and expansive landscapes. Whether you enjoy crafting, building, exploring, or even coding, 
-            Minecraft offers something for everyone, fostering a community of millions worldwide.
+            thanks for visiting da website!.
         </p>
-        <img src="minecraft-wallpaper.jpg" alt="Minecraft Wallpaper" style="max-width: 100%; height: auto;">
+    
     </div>
 </body>
 </html>
