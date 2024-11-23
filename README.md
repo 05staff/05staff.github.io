@@ -39,7 +39,7 @@
         <ul>
             <li><b>Join da server:</b>join my server :D https://discord.gg/NsqEmNtQyn </li>
             <li><b>vibe with me 😎:</b> lets listen to some fire music.</li>
-            <li><b>Checkout secret pages :o </li>
+            <li><b>Check out the secret easter eggs</li>
 
         </ul>
         <p>
@@ -47,6 +47,7 @@
         </p>
     
     </div>
+    
 </body>
 <footer>
         <p>&copy; 2024 05staff. All rights reserved.</p>
