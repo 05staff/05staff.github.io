@@ -1,5 +1,5 @@
 <html lang="en">
-    <link rel="icon" href="assets/05staff.png" type="image/png">
+    <link rel="icon" href="05staff.github.io/05staff.png" type="image/png">
 
 <head>
     <meta charset="UTF-8">
