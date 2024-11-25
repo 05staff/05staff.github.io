@@ -1,8 +1,10 @@
 <html lang="en">
+    <link rel="icon" href="assets/05staff.png" type="image/png">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft Description</title>
+    <title>My Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
