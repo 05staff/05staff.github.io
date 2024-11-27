@@ -150,7 +150,8 @@
     <!-- Footer -->
     <footer class="footer">
         <a href="termsofcondition.html" class="footer-button">Terms Of Condition</a>
-        <a href="https://gametime-developement.rf.gd/discord.invite.server" class="header-button">Discord Server</a>
+         <a href="dsc.gg/gtd-invite" class="footer-button">Terms Of Condition</a>
+        
     </footer>
 
     <script>
