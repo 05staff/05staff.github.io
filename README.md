@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -129,10 +128,10 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">LOGO</div>
+        <div class="logo">05staff</div>
         <div class="header-buttons">
-            <a href="page1.html" class="header-button">Page 1</a>
-            <a href="page2.html" class="header-button">Page 2</a>
+            <a href="05staff.github.io" class="header-button">Home</a>
+            <a href="about-me.html" class="header-button">Abou Me</a>
         </div>
     </header>
 
@@ -150,16 +149,15 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <a href="#" class="footer-button">Footer Button 1</a>
-        <a href="#" class="footer-button">Footer Button 2</a>
+        <a href="termsofcondition.html" class="footer-button">Terms Of Condition</a>
+        <a href="https://gametime-developement.rf.gd/discord.invite.server" class="header-button">Discord Server</a>
     </footer>
 
     <script>
         const pages = [
-            { name: "Page 1", link: "page1.html" },
-            { name: "Page 2", link: "page2.html" },
-            { name: "About Us", link: "about.html" },
-            { name: "Contact", link: "contact.html" },
+            { name: "Home", link: "05staff.github.io" },
+            { name: "About Me", link: "05staff.github.io/about-me.html" }
+            { name: "Terms Of Condition", link: "termsofcondition.html" },
         ];
 
         function performSearch() {
