@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -131,7 +132,7 @@
         <div class="logo">05staff</div>
         <div class="header-buttons">
             <a href="05staff.github.io" class="header-button">Home</a>
-            <a href="about-me.html" class="header-button">Abou Me</a>
+            <a href="about-me.html" class="header-button">About Me</a>
         </div>
     </header>
 
@@ -150,17 +151,18 @@
     <!-- Footer -->
     <footer class="footer">
         <a href="termsofcondition.html" class="footer-button">Terms Of Condition</a>
-         <a href="dsc.gg/gtd-invite" class="footer-button">Discord Server</a>
-        
+        <a href="https://dsc.gg/gtd-invite" class="footer-button">Discord Server</a>
     </footer>
 
     <script>
+        // Predefined pages array
         const pages = [
             { name: "Home", link: "05staff.github.io" },
-            { name: "About Me", link: "05staff.github.io/about-me.html" }
-            { name: "Terms Of Condition", link: "termsofcondition.html" },
+            { name: "About Me", link: "about-me.html" },
+            { name: "Terms Of Condition", link: "termsofcondition.html" }
         ];
 
+        // Search function
         function performSearch() {
             const input = document.getElementById("searchInput").value.toLowerCase();
             const resultsList = document.getElementById("resultsList");
@@ -184,7 +186,7 @@
                         new RegExp(input, "gi"),
                         match => `<span class="highlight">${match}</span>`
                     );
-                    resultsList.innerHTML += `<li><a href="${page.link}">${highlightedName}</a></li>`;
+                    resultsList.innerHTML += `<li><a href="${page.link}" target="_blank">${highlightedName}</a></li>`;
                 });
             }
 
