@@ -42,6 +42,7 @@
             background-color: #fff;
             color: #333;
             border-radius: 5px;
+            text-decoration: none;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -93,6 +94,12 @@
             text-align: center;
         }
 
+        .search-results span.highlight {
+            background-color: yellow;
+            color: black;
+        }
+
+        /* Footer Styling */
         .footer {
             text-align: center;
             padding: 20px;
@@ -124,21 +131,21 @@
     <header>
         <div class="logo">LOGO</div>
         <div class="header-buttons">
-            <button class="header-button">Button 1</button>
-            <button class="header-button">Button 2</button>
+            <a href="page1.html" class="header-button">Page 1</a>
+            <a href="page2.html" class="header-button">Page 2</a>
         </div>
     </header>
 
     <!-- Search Section -->
     <div class="search-section">
         <input type="text" id="searchInput" class="search-bar" placeholder="Type your keyword...">
-        <button class="search-button" onclick="showSearchResults()">Search</button>
+        <button class="search-button" onclick="performSearch()">Search</button>
     </div>
 
     <!-- Search Results Section -->
     <div id="searchResults" class="search-results">
         <h2>Search Results</h2>
-        <p>You searched for: <span id="keyword"></span></p>
+        <ul id="resultsList"></ul>
     </div>
 
     <!-- Footer -->
@@ -148,16 +155,41 @@
     </footer>
 
     <script>
-        function showSearchResults() {
-            // Get the input value
-            const keyword = document.getElementById('searchInput').value;
+        const pages = [
+            { name: "Page 1", link: "page1.html" },
+            { name: "Page 2", link: "page2.html" },
+            { name: "About Us", link: "about.html" },
+            { name: "Contact", link: "contact.html" },
+        ];
 
-            // Update the search results content
-            const resultsDiv = document.getElementById('searchResults');
-            const keywordSpan = document.getElementById('keyword');
+        function performSearch() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const resultsList = document.getElementById("resultsList");
+            const resultsDiv = document.getElementById("searchResults");
 
-            keywordSpan.textContent = keyword;
-            resultsDiv.style.display = 'block';
+            resultsList.innerHTML = ""; // Clear previous results
+            if (input.trim() === "") {
+                resultsDiv.style.display = "none";
+                return;
+            }
+
+            const matchingPages = pages.filter(page =>
+                page.name.toLowerCase().includes(input)
+            );
+
+            if (matchingPages.length === 0) {
+                resultsList.innerHTML = "<li>No results found.</li>";
+            } else {
+                matchingPages.forEach(page => {
+                    const highlightedName = page.name.replace(
+                        new RegExp(input, "gi"),
+                        match => `<span class="highlight">${match}</span>`
+                    );
+                    resultsList.innerHTML += `<li><a href="${page.link}">${highlightedName}</a></li>`;
+                });
+            }
+
+            resultsDiv.style.display = "block";
         }
     </script>
 </body>
