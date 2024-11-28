@@ -52,51 +52,46 @@
             color: #fff;
         }
 
-        /* Search Bar Section */
-        .search-section {
-            margin: 20px auto;
-            text-align: center;
+        /* Content Body */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            background-color: #f4f4f9;
         }
 
-        .search-bar {
-            padding: 10px 15px;
+        .content-item {
+            background-color: #fff;
             border: 2px solid #ddd;
-            width: 250px;
-            border-radius: 5px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 12px;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .search-button {
+        .content-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content-button {
             padding: 10px 15px;
-            border: none;
+            border: 2px solid #333;
             background-color: #333;
             color: #fff;
-            cursor: pointer;
             border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
             transition: all 0.3s ease;
-            font-family: 'Press Start 2P', cursive;
             font-size: 12px;
         }
 
-        .search-button:hover {
+        .content-button:hover {
             background-color: #555;
-        }
-
-        /* Search Results Section */
-        .search-results {
-            display: none;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin: 20px auto;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .search-results span.highlight {
-            background-color: yellow;
-            color: black;
         }
 
         /* Footer Styling */
@@ -136,16 +131,23 @@
         </div>
     </header>
 
-    <!-- Search Section -->
-    <div class="search-section">
-        <input type="text" id="searchInput" class="search-bar" placeholder="Type your keyword...">
-        <button class="search-button" onclick="performSearch()">Search</button>
-    </div>
-
-    <!-- Search Results Section -->
-    <div id="searchResults" class="search-results">
-        <h2>Search Results</h2>
-        <ul id="resultsList"></ul>
+    <!-- Content Body -->
+    <div class="content">
+        <div class="content-item">
+            <img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+            <p>Sample Text for Item 1</p>
+            <a href="#" class="content-button">Learn More</a>
+        </div>
+        <div class="content-item">
+            <img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+            <p>Sample Text for Item 2</p>
+            <a href="#" class="content-button">Learn More</a>
+        </div>
+        <div class="content-item">
+            <img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+            <p>Sample Text for Item 3</p>
+            <a href="#" class="content-button">Learn More</a>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -153,45 +155,5 @@
         <a href="termsofcondition.html" class="footer-button">Terms Of Condition</a>
         <a href="https://dsc.gg/gtd-invite" class="footer-button">Discord Server</a>
     </footer>
-
-    <script>
-        // Predefined pages array
-        const pages = [
-            { name: "Home", link: "05staff.github.io" },
-            { name: "About Me", link: "about-me.html" },
-            { name: "Terms Of Condition", link: "termsofcondition.html" }
-        ];
-
-        // Search function
-        function performSearch() {
-            const input = document.getElementById("searchInput").value.toLowerCase();
-            const resultsList = document.getElementById("resultsList");
-            const resultsDiv = document.getElementById("searchResults");
-
-            resultsList.innerHTML = ""; // Clear previous results
-            if (input.trim() === "") {
-                resultsDiv.style.display = "none";
-                return;
-            }
-
-            const matchingPages = pages.filter(page =>
-                page.name.toLowerCase().includes(input)
-            );
-
-            if (matchingPages.length === 0) {
-                resultsList.innerHTML = "<li>No results found.</li>";
-            } else {
-                matchingPages.forEach(page => {
-                    const highlightedName = page.name.replace(
-                        new RegExp(input, "gi"),
-                        match => `<span class="highlight">${match}</span>`
-                    );
-                    resultsList.innerHTML += `<li><a href="${page.link}" target="_blank">${highlightedName}</a></li>`;
-                });
-            }
-
-            resultsDiv.style.display = "block";
-        }
-    </script>
 </body>
 </html>
