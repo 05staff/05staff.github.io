@@ -52,6 +52,37 @@
             color: #fff;
         }
 
+        /* Search Bar Section */
+        .search-section {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .search-bar {
+            padding: 10px 15px;
+            border: 2px solid #ddd;
+            width: 250px;
+            border-radius: 5px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+        }
+
+        .search-button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 12px;
+        }
+
+        .search-button:hover {
+            background-color: #555;
+        }
+
         /* Content Body */
         .content {
             display: flex;
@@ -88,6 +119,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             font-size: 12px;
+            font-family: 'Press Start 2P', cursive;
         }
 
         .content-button:hover {
@@ -131,6 +163,18 @@
         </div>
     </header>
 
+    <!-- Search Section -->
+    <div class="search-section">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Type your keyword...">
+        <button class="search-button" onclick="performSearch()">Search</button>
+    </div>
+
+    <!-- Search Results Section -->
+    <div id="searchResults" class="search-results">
+        <h2>Search Results</h2>
+        <ul id="resultsList"></ul>
+    </div>
+
     <!-- Content Body -->
     <div class="content">
         <div class="content-item">
@@ -155,5 +199,37 @@
         <a href="termsofcondition.html" class="footer-button">Terms Of Condition</a>
         <a href="https://dsc.gg/gtd-invite" class="footer-button">Discord Server</a>
     </footer>
-</body>
-</html>
+
+    <script>
+        // Predefined pages array
+        const pages = [
+            { name: "Home", link: "05staff.github.io" },
+            { name: "About Me", link: "about-me.html" },
+            { name: "Terms Of Condition", link: "termsofcondition.html" }
+        ];
+
+        // Search function
+        function performSearch() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const resultsList = document.getElementById("resultsList");
+            const resultsDiv = document.getElementById("searchResults");
+
+            resultsList.innerHTML = ""; // Clear previous results
+            if (input.trim() === "") {
+                resultsDiv.style.display = "none";
+                return;
+            }
+
+            const matchingPages = pages.filter(page =>
+                page.name.toLowerCase().includes(input)
+            );
+
+            if (matchingPages.length === 0) {
+                resultsList.innerHTML = "<li>No results found.</li>";
+            } else {
+                matchingPages.forEach(page => {
+                    const highlightedName = page.name.replace(
+                        new RegExp(input, "gi"),
+                        match => `<span class="highlight">${match}</span>`
+                    );
+                    resultsList.innerHTML += `<
