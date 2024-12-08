@@ -10,7 +10,7 @@
     /* Define Bauhaus Demi font */
     @font-face {
       font-family: 'Bauhaus Demi';
-      src: url('https://05staff.github.io/Bauhaus%20Demi.otf') format('opentype');
+      src: url('https://05staff.github.io/BauhausDemi.woff') format('woff');
       font-weight: normal;
       font-style: normal;
     }
