@@ -10,7 +10,7 @@
     /* Define Bauhaus Demi font */
     @font-face {
       font-family: 'Bauhaus Demi';
-      src: url('https://05staff.github.io/BauhausDemi.woff') format('woff');
+      src: url('https://05staff.github.io/BauhausDemi.otf') format('woff');
       font-weight: normal;
       font-style: normal;
     }
@@ -88,8 +88,8 @@
   <main>
     <!-- Editable Text Section -->
     <div class="editable-text">
-      <h1>Welcome to the SCP UIU Fan Website</h1>
-      <p>This is a fan-made website dedicated to the SCP Foundation's UIU. Feel free to explore and learn more!</p>
+      <h1>UIU Agents Technic</h1>
+      <p>Welcome to the SCP UIU Agents Technic website, where you can apply as an UIU Agent! (THIS IS A FANSITE OF THE SCP FRANCHISE!)</p>
     </div>
     <!-- Image -->
     <img src="https://05staff.github.io/uiu.png" alt="UIU Image">
