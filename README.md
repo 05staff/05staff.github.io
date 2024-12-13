@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light Blue Theme with Scroll Effect</title>
+    <title>Light Blue Theme with Search</title>
     <style>
         /* General Page Styles */
         body {
@@ -96,6 +96,23 @@
             background-color: #0277bd;
         }
 
+        /* Search Results Section */
+        .results-frame {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
         /* Footer Section */
         footer {
             background-color: #0288d1;
@@ -119,7 +136,7 @@
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="openSearch()">Search</button>
+            <button onclick="performSearch()">Search</button>
         </div>
     </header>
 
@@ -127,8 +144,17 @@
     <div class="content" id="content">
         <h1>Welcome to the Light Blue Theme Website!</h1>
         <p>This is a simple, smooth light blue theme website with Arial font.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec risus at elit luctus tincidunt.</p>
+        <p>Phasellus a felis a elit tincidunt fermentum. Duis feugiat nisl a felis tristique, vel volutpat risus malesuada.</p>
+        <p>Vivamus dapibus massa vel tellus gravida, nec mollis mauris suscipit.</p>
         <img src="https://via.placeholder.com/600x400" alt="Placeholder Image">
         <button onclick="buttonAction()">Click Me</button>
+    </div>
+
+    <!-- Search Results -->
+    <div class="results-frame" id="resultsFrame">
+        <h3>Search Results:</h3>
+        <div id="resultsContainer"></div>
     </div>
 
     <!-- Footer -->
@@ -155,15 +181,24 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scroll
         });
 
-        // Open search in a new tab
-        function openSearch() {
-            const searchQuery = document.getElementById("searchInput").value;
-            if (searchQuery.trim()) {
-                const searchURL = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-                window.open(searchURL, '_blank'); // Opens in a new tab
-            } else {
-                alert("Please enter a search query.");
+        // Search Functionality
+        function performSearch() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const content = document.getElementById("content").innerHTML;
+            const resultsFrame = document.getElementById("resultsContainer");
+
+            if (!query) {
+                resultsFrame.innerHTML = `<p>Please enter a search term.</p>`;
+                return;
             }
+
+            // Highlight matches
+            const highlightedContent = content.replace(
+                new RegExp(query, "gi"),
+                match => `<span class="highlight">${match}</span>`
+            );
+
+            resultsFrame.innerHTML = highlightedContent;
         }
 
         // Placeholder Button Action
