@@ -119,7 +119,7 @@
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="searchContent()">Search</button>
+            <button onclick="openSearch()">Search</button>
         </div>
     </header>
 
@@ -155,25 +155,14 @@
             lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scroll
         });
 
-        // Search Function
-        function searchContent() {
-            const searchInput = document.getElementById("searchInput").value.toLowerCase();
-            const content = document.getElementById("content");
-            const paragraphs = content.getElementsByTagName("p");
-
-            let found = false;
-
-            for (let p of paragraphs) {
-                if (p.textContent.toLowerCase().includes(searchInput)) {
-                    p.style.backgroundColor = "#ffff99"; // Highlight found text
-                    found = true;
-                } else {
-                    p.style.backgroundColor = "transparent";
-                }
-            }
-
-            if (!found) {
-                alert("No matches found.");
+        // Open search in a new tab
+        function openSearch() {
+            const searchQuery = document.getElementById("searchInput").value;
+            if (searchQuery.trim()) {
+                const searchURL = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
+                window.open(searchURL, '_blank'); // Opens in a new tab
+            } else {
+                alert("Please enter a search query.");
             }
         }
 
