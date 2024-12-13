@@ -131,8 +131,7 @@
     <header id="main-header">
         <div class="nav-buttons">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="about-me.html">About</a>
         </div>
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search...">
@@ -142,11 +141,8 @@
 
     <!-- Main Content -->
     <div class="content" id="content">
-        <h1>Welcome to the Light Blue Theme Website!</h1>
-        <p>This is a simple, smooth light blue theme website with Arial font.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nec risus at elit luctus tincidunt.</p>
-        <p>Phasellus a felis a elit tincidunt fermentum. Duis feugiat nisl a felis tristique, vel volutpat risus malesuada.</p>
-        <p>Vivamus dapibus massa vel tellus gravida, nec mollis mauris suscipit.</p>
+        <h1>05staff's Website</h1>
+        <p>Welcome to the Official 05staff's Website</p>
         <img src="https://via.placeholder.com/600x400" alt="Placeholder Image">
         <button onclick="buttonAction()">Click Me</button>
     </div>
@@ -159,7 +155,7 @@
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 Your Website. All rights reserved.
+    &copy;2024 05staff's Official Webbsite. All rights reserved.
     </footer>
 
     <script>
