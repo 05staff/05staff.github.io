@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft UI</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <style>
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('https://www.fontsaddict.com/fontface/minecraft-ten.font'); /* This loads Minecraft-like font */
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +17,7 @@
         }
 
         body {
-            font-family: 'VT323', monospace;
+            font-family: 'Minecraft', sans-serif;
             background-color: black;
             color: #00ff00;
             text-align: center;
@@ -56,7 +60,7 @@
             width: 100%;
         }
 
-        /* BUTTON STYLE (Minecraft.net Look) */
+        /* MINECRAFT-STYLE BUTTON */
         .button {
             background: linear-gradient(to bottom, #00cc00, #007700);
             color: white;
