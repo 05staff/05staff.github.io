@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft UI</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            font-family: 'Press Start 2P', cursive;
+            font-family: 'VT323', monospace;
             background-color: black;
             color: #00ff00;
             text-align: center;
@@ -30,7 +30,7 @@
             background-color: #008000;
             color: white;
             padding: 15px 0;
-            font-size: 20px;
+            font-size: 30px;
             text-align: center;
         }
 
@@ -40,35 +40,10 @@
             background-color: #111;
             color: #888;
             padding: 10px 0;
-            font-size: 12px;
+            font-size: 14px;
             text-align: center;
             position: absolute;
             bottom: 0;
-        }
-
-        /* BUTTON STYLE */
-        .button {
-            background-color: #00aa00;
-            color: white;
-            font-size: 16px;
-            padding: 20px;
-            border: 4px solid #006600;
-            cursor: pointer;
-            text-transform: uppercase;
-            margin: 10px;
-            width: 200px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 4px 4px 0px #003300;
-            transition: all 0.1s;
-        }
-
-        .button:hover {
-            background-color: #00dd00;
-            box-shadow: 2px 2px 0px #003300;
-            transform: translate(2px, 2px);
         }
 
         /* MAIN CONTENT */
@@ -79,6 +54,31 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+        }
+
+        /* BUTTON STYLE (Minecraft.net Look) */
+        .button {
+            background: linear-gradient(to bottom, #00cc00, #007700);
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            border: 4px solid #004400;
+            cursor: pointer;
+            text-transform: uppercase;
+            margin: 10px;
+            width: 250px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 4px 4px 0px #002200;
+            transition: all 0.1s;
+        }
+
+        .button:hover {
+            background: linear-gradient(to bottom, #00ff00, #009900);
+            box-shadow: 2px 2px 0px #001100;
+            transform: translate(2px, 2px);
         }
     </style>
 </head>
