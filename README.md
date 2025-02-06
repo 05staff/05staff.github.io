@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft UI</title>
+    <title>05staff's Website</title>
     <style>
         @font-face {
             font-family: 'Minecraft';
-            src: url('https://www.fontsaddict.com/fontface/minecraft-ten.font'); /* This loads Minecraft-like font */
+            src: url('https://www.fontsaddict.com/fontface/minecraft-ten.font');
         }
 
         * {
@@ -28,16 +28,6 @@
             height: 100vh;
         }
 
-        /* HEADER */
-        .header {
-            width: 100%;
-            background-color: #008000;
-            color: white;
-            padding: 15px 0;
-            font-size: 30px;
-            text-align: center;
-        }
-
         /* FOOTER */
         .footer {
             width: 100%;
@@ -46,59 +36,44 @@
             padding: 10px 0;
             font-size: 14px;
             text-align: center;
-            position: absolute;
+            position: fixed;
             bottom: 0;
+            left: 0;
         }
 
-        /* MAIN CONTENT */
-        .content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-        }
-
-        /* MINECRAFT-STYLE BUTTON */
-        .button {
-            background: linear-gradient(to bottom, #00cc00, #007700);
+        /* PURPLE FLAME DISCORD BUTTON */
+        .discord-button {
+            background: linear-gradient(to bottom, #aa00ff, #5500aa);
             color: white;
             font-size: 20px;
             padding: 20px;
-            border: 4px solid #004400;
+            border: 4px solid #330066;
             cursor: pointer;
             text-transform: uppercase;
-            margin: 10px;
+            margin: 20px;
             width: 250px;
             height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 4px 4px 0px #002200;
+            box-shadow: 4px 4px 0px #220044;
             transition: all 0.1s;
+            text-decoration: none;
         }
 
-        .button:hover {
-            background: linear-gradient(to bottom, #00ff00, #009900);
-            box-shadow: 2px 2px 0px #001100;
+        .discord-button:hover {
+            background: linear-gradient(to bottom, #cc00ff, #7700cc);
+            box-shadow: 2px 2px 0px #330066;
             transform: translate(2px, 2px);
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <div class="header">
-        Minecraft UI
-    </div>
-
     <!-- MAIN CONTENT -->
     <div class="content">
-        <h1>Welcome to Minecraft UI</h1>
-        <button class="button">Start Game</button>
-        <button class="button">Settings</button>
-        <button class="button">Exit</button>
+        <h1>Join Our Discord</h1>
+        <a href="https://discord.gg/NsqEmNtQyn" class="discord-button">Join Now</a>
     </div>
 
     <!-- FOOTER -->
