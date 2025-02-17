@@ -61,7 +61,7 @@
 				<!-- Replace these with your messages -->
 				
 				<li>Thanks for 210k visits on my game</li>
-				<li>Uhh??</li>
+				<li>Just a normal website</li>
 				<li>Who would win between john wick and robert mccall?</li>
 				<li>Join my discord server</li>
 				
