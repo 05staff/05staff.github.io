@@ -33,13 +33,13 @@ body {
 }
 
 #logo h1:before {
-	content:"MC";   /* Yellow Text */
+	content:"05s";   /* Yellow Text */
 	color: yellow;
 	font-family: Logo;
 }
 
 #logo h1:after {
-	content: "Server";  /* Black Text */
+	content: "Website";  /* Black Text */
 	font-family: Logo;
 }
 
