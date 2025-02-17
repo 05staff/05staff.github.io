@@ -97,15 +97,7 @@
 			
 			
 			<!-- This is dummy text. You can change it to whatever you like -->
-			<p>Sup i'm 05staff just a guy testing his skills and i'm a dev yeah. I love playing games especially STEAM GAMES
-   
-   
-   
-   
-                       
-		        
-	   
-    </p>
+			<p>Sup i'm 05staff just a guy testing his skills and i'm a dev yeah. I love playing games especially STEAM GAMES</p>
 
 		<div class="footer">
 		
