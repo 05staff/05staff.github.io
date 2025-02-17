@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 
 <!-- Site Title -->
-<title>05staff's Website</title>
+<title>05sWeb</title>
 
 <!-- Styles -->
 <link rel="stylesheet" href="style/layout.css">
