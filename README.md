@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Page Layout</title>
+    <title>Simple Full-Screen Page</title>
     <style>
+        /* Load Custom Font */
+        @font-face {
+            font-family: 'CustomFont';
+            src: url('https://05staff.github.io/MinecraftRegular-Bmg3.otf') format('opentype');
+        }
+
         /* Reset */
         * {
             margin: 0;
@@ -12,26 +18,27 @@
             box-sizing: border-box;
         }
 
-        /* Full Page Layout */
+        /* Full-Screen Body */
         body {
+            font-family: 'CustomFont', sans-serif;
             background-color: black;
             color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             height: 100vh;
-            width: 100vw;
+            text-align: center;
+            padding: 20px;
         }
 
         /* Header */
         .header {
             width: 100%;
             background-color: #222;
-            padding: 15px;
-            font-size: 20px;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
             font-weight: bold;
             display: flex;
             justify-content: center;
@@ -44,20 +51,21 @@
             color: white;
             font-size: 18px;
             padding: 10px 15px;
-            border: 2px solid #111;
+            border: 3px solid #111;
             cursor: pointer;
+            text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 2px 2px 0px #111;
+            box-shadow: 3px 3px 0px #000;
             transition: all 0.1s;
         }
 
         .header-button:hover {
             background: linear-gradient(to bottom, #666, #333);
-            box-shadow: 1px 1px 0px #111;
-            transform: translate(1px, 1px);
+            box-shadow: 2px 2px 0px #000;
+            transform: translate(2px, 2px);
         }
 
-        /* Main Content - Full Page */
+        /* Full-Screen Content */
         .content {
             flex-grow: 1;
             display: flex;
@@ -65,24 +73,28 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+            max-width: 800px;
+            text-align: center;
         }
 
         /* Text */
         .content p {
-            font-size: 28px;
+            font-size: 22px;
+            color: white;
             margin-bottom: 20px;
         }
 
         /* Blue Button */
         .blue-button {
             background: linear-gradient(to bottom, #0000ff, #000088);
-            color: #ffffff;
+            color: white;
             font-size: 20px;
             padding: 15px 20px;
-            border: 3px solid #000044;
+            border: 4px solid #000044;
             cursor: pointer;
+            text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 3px 3px 0px #000033;
+            box-shadow: 4px 4px 0px #000033;
             transition: all 0.1s;
         }
 
@@ -95,7 +107,7 @@
         /* Footer */
         .footer {
             width: 100%;
-            background-color: #222;
+            background-color: #111;
             color: #888;
             padding: 10px;
             font-size: 14px;
@@ -112,15 +124,15 @@
         <a href="#" class="header-button">Contact</a>
     </div>
 
-    <!-- MAIN CONTENT (COVERS FULL PAGE) -->
+    <!-- MAIN CONTENT (NO IMAGE, JUST TEXT & BUTTON) -->
     <div class="content">
-        <p>Welcome to My Website</p>
+        <p>Welcome to the Full-Screen UI!</p>
         <a href="#" class="blue-button">Click Me</a>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-        © 2025 My Website. All rights reserved.
+        © 2025 Full-Screen UI. All Rights Reserved.
     </div>
 
 </body>
