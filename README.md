@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 
 <!-- Site Title -->
-<title>Minecraft</title>
+<title>05staff's Website</title>
 
 <!-- Styles -->
 <link rel="stylesheet" href="style/layout.css">
@@ -37,11 +37,11 @@
 
 			<ul>
 				<li class="first"><a href="#"> Home </a> </li>
-				<li><a href="https://discord.gg/NsqEmNtQyn"> Discord Server </a> </li>
+				<li><a href="[discordredirect.05staff.github.io](https://discord.gg/NsqEmNtQyn)"> Discord Server </a> </li>
 			</ul>
 			
 			<ul class="right">
-				<li class="first"><a href="about.html"> About this web </a> </li>
+				<li class="first"><a href="goofyahh.html"> Useless Page </a> </li>
 			</ul>
 		
 		</div>
@@ -60,10 +60,10 @@
 				
 				<!-- Replace these with your messages -->
 				
-				<li>DAAAAAAAAA WEEEEBSITEEEEE </li>
-				<li>Join the server, like join NOW!!!</li>
-				<li>Here is another one. This one is a little bit longer, I think...</li>
-				<li>GO GO BALTHAZAR!!</li>
+				<li>Thanks for 210k visits on my game</li>
+				<li>Uhh??</li>
+				<li>Who would win between john wick and robert mccall?</li>
+				<li>Join my discord server</li>
 				
 			</ul>
 		
@@ -97,11 +97,11 @@
 			
 			
 			<!-- This is dummy text. You can change it to whatever you like -->
-			<p>Sup i'm 05staff just a guy testing his skills and i'm a dev yeah. I love playing games especially STEAM GAMES</p>
+			<p>Sup i'm 05staff and i found this website and cuz i'm a big fan of gaming so i decided to use this theme (it was free to use  & open source).</p>
 
 		<div class="footer">
 		
-		<p>Copyright &copy; Present - 05staff's Web
+		<p>Copyright &copy; 2012 - Server Name 
 		
 		</div>
 			
@@ -112,22 +112,22 @@
 		
 		<div class="sidebar">
 		
-		<h3 class="address">Server Address</h3>
-		<p class="address">!!SERVER STILL IN PROGRESS!!</p>
+		<h3 class="address">Nuthing</h3>
+		<p class="address">literally nothing</p>
 		
 		</div>
 		
 		<div class="sidebar">
 		
 						<!-- Change To Online or Offline depending on your server status -->
-		<h3>Server Status: </h3> <div class="offline"></div>
+		<h3>Activity: </h3> <div class="offline"></div>
 		
 		</div>
 		
 		<div class="sidebar">
 		
-		<h3> Golden Players </h3>
-		<p>This is where players that helped me on my life is gonna pop up!</p>
+		<h3> DS </h3>
+		<p>05staff's Discord server is basically a goofy ahh server</p>
 		<h3>
 			
 		</h3>
