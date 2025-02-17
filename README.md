@@ -114,7 +114,4 @@
 			
 		</h3>
 		
-		</div>	
-</div>	
-</body>
-</html>
+		</div>
