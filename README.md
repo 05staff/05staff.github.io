@@ -3,14 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft UI</title>
+    <title>Full Page Layout</title>
     <style>
-        /* Load Minecraft Font */
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('https://05staff.github.io/MinecraftRegular-Bmg3.otf') format('opentype');
-        }
-
         /* Reset */
         * {
             margin: 0;
@@ -18,24 +12,24 @@
             box-sizing: border-box;
         }
 
-        /* Body */
+        /* Full Page Layout */
         body {
-            font-family: 'Minecraft', sans-serif;
             background-color: black;
-            color: #00ff00;
+            color: white;
             text-align: center;
+            font-family: Arial, sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
             height: 100vh;
+            width: 100vw;
         }
 
         /* Header */
         .header {
             width: 100%;
-            background-color: #006600;
-            color: white;
+            background-color: #222;
             padding: 15px;
             font-size: 20px;
             font-weight: bold;
@@ -46,49 +40,37 @@
 
         /* Header Buttons */
         .header-button {
-            background: linear-gradient(to bottom, #008800, #004400);
+            background: linear-gradient(to bottom, #444, #222);
             color: white;
             font-size: 18px;
             padding: 10px 15px;
-            border: 3px solid #002200;
+            border: 2px solid #111;
             cursor: pointer;
-            text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 3px 3px 0px #002200;
+            box-shadow: 2px 2px 0px #111;
             transition: all 0.1s;
         }
 
         .header-button:hover {
-            background: linear-gradient(to bottom, #00cc00, #006600);
-            box-shadow: 2px 2px 0px #003300;
-            transform: translate(2px, 2px);
+            background: linear-gradient(to bottom, #666, #333);
+            box-shadow: 1px 1px 0px #111;
+            transform: translate(1px, 1px);
         }
 
-        /* Main Content */
+        /* Main Content - Full Page */
         .content {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        /* Image */
-        .content img {
             width: 100%;
-            max-width: 500px;
-            border: 5px solid #00ff00;
-            margin-bottom: 15px;
         }
 
         /* Text */
         .content p {
-            font-size: 22px;
-            color: #00ff00;
-            margin-bottom: 15px;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
 
         /* Blue Button */
@@ -97,11 +79,10 @@
             color: #ffffff;
             font-size: 20px;
             padding: 15px 20px;
-            border: 4px solid #000044;
+            border: 3px solid #000044;
             cursor: pointer;
-            text-transform: uppercase;
             text-decoration: none;
-            box-shadow: 4px 4px 0px #000033;
+            box-shadow: 3px 3px 0px #000033;
             transition: all 0.1s;
         }
 
@@ -114,7 +95,7 @@
         /* Footer */
         .footer {
             width: 100%;
-            background-color: #111;
+            background-color: #222;
             color: #888;
             padding: 10px;
             font-size: 14px;
@@ -131,16 +112,15 @@
         <a href="#" class="header-button">Contact</a>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT (COVERS FULL PAGE) -->
     <div class="content">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft Image">
-        <p>Welcome to the Minecraft UI Clone!</p>
-        <a href="#" class="blue-button">Play Now</a>
+        <p>Welcome to My Website</p>
+        <a href="#" class="blue-button">Click Me</a>
     </div>
 
     <!-- FOOTER -->
     <div class="footer">
-        © 2025 Minecraft UI. Not affiliated with Mojang or Microsoft.
+        © 2025 My Website. All rights reserved.
     </div>
 
 </body>
