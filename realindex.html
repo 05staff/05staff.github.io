@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DVD Bouncing Text</title>
+  <title>05staff's Website</title>
   <style>
     html, body {
       margin: 0;
@@ -10,11 +10,43 @@
       overflow: hidden;
       height: 100%;
       background-color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header bar */
+    header {
+      width: 100%;
+      background-color: #111;
+      color: white;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .header-button {
+      background-color: #222;
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .header-button:hover {
+      background-color: #444;
     }
 
     #dvd {
       position: absolute;
-      font-family: Arial, sans-serif;
       font-size: 40px;
       color: white;
       padding: 10px 20px;
@@ -24,16 +56,39 @@
       font-weight: bold;
       transition: color 0.2s ease;
     }
+
+    /* Secret hidden text */
+    .secret {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      color: black; /* hidden unless highlighted */
+      font-size: 14px;
+      z-index: 0;
+      user-select: text;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Header with buttons -->
+  <header>
+    <a href="#" class="header-button" target="_blank">Home</a>
+    <a href="https://github.com/05staff/05staff.github.io/blob/main/anotheranotheranotheruselesspagewrittenin.html" class="header-button" target="_blank">Another useless page</a>
+    <a href="https://discord.gg/NsqEmNtQyn class="header-button" target="_blank">Discord</a>
+  </header>
+
+  <!-- Bouncing DVD Text -->
   <div id="dvd">DVD</div> <!-- Change this text -->
+
+  <!-- Hidden secret text -->
+  <div class="secret">hey you found this secret great</div>
 
   <script>
     const dvd = document.getElementById("dvd");
 
-    // EDITABLE TEXT:
-    dvd.textContent = "nothing is here :)"; // Change this to anything you want!
+    // ✏️ Change the DVD text here
+    dvd.textContent = "Your Text Here";
 
     let posX = 100;
     let posY = 100;
@@ -52,7 +107,6 @@
       const screenHeight = window.innerHeight;
 
       let hitWall = false;
-      let hitCorner = false;
 
       if (posX + rect.width >= screenWidth || posX <= 0) {
         velX *= -1;
@@ -70,16 +124,7 @@
       dvd.style.left = posX + "px";
       dvd.style.top = posY + "px";
 
-      // Check for corner hit
-      if (
-        (posX <= 0 && posY <= 0) || // top-left
-        (posX + rect.width >= screenWidth && posY <= 0) || // top-right
-        (posX <= 0 && posY + rect.height >= screenHeight) || // bottom-left
-        (posX + rect.width >= screenWidth && posY + rect.height >= screenHeight) // bottom-right
-      ) {
-        hitCorner = true;
-      }
-
+      // Change color on bounce
       if (hitWall) {
         dvd.style.color = getRandomColor();
       }
