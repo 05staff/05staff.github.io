@@ -1,16 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Oh well,¯\_(ツ)_/¯  </title>
+  <meta charset="UTF-8">
+  <title>DVD Bouncing Text</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background-color: black;
+    }
+
+    #dvd {
+      position: absolute;
+      font-family: Arial, sans-serif;
+      font-size: 40px;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      background-color: transparent;
+      user-select: none;
+      font-weight: bold;
+      transition: color 0.2s ease;
+    }
+  </style>
 </head>
 <body>
-<h1>Nothing is here</h1>
-    <p>Like seriously, nothing is there :)</p>
-    <p>Or,</p>
-  <a href="https://discord.gg/NsqEmNtQyn">is it...</a>
-  <a href="anotheranotheranotheruselesspagewrittenin.html">another useless page</a>
+  <div id="dvd">DVD</div> <!-- Change this text -->
 
+  <script>
+    const dvd = document.getElementById("dvd");
 
+    // EDITABLE TEXT:
+    dvd.textContent = "nothing is here :)"; // Change this to anything you want!
+
+    let posX = 100;
+    let posY = 100;
+    let velX = 2;
+    let velY = 2;
+
+    const colors = ["red", "green", "blue", "yellow", "purple", "cyan", "orange", "magenta", "white"];
+
+    function getRandomColor() {
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function animate() {
+      const rect = dvd.getBoundingClientRect();
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      let hitWall = false;
+      let hitCorner = false;
+
+      if (posX + rect.width >= screenWidth || posX <= 0) {
+        velX *= -1;
+        hitWall = true;
+      }
+
+      if (posY + rect.height >= screenHeight || posY <= 0) {
+        velY *= -1;
+        hitWall = true;
+      }
+
+      posX += velX;
+      posY += velY;
+
+      dvd.style.left = posX + "px";
+      dvd.style.top = posY + "px";
+
+      // Check for corner hit
+      if (
+        (posX <= 0 && posY <= 0) || // top-left
+        (posX + rect.width >= screenWidth && posY <= 0) || // top-right
+        (posX <= 0 && posY + rect.height >= screenHeight) || // bottom-left
+        (posX + rect.width >= screenWidth && posY + rect.height >= screenHeight) // bottom-right
+      ) {
+        hitCorner = true;
+      }
+
+      if (hitWall) {
+        dvd.style.color = getRandomColor();
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
