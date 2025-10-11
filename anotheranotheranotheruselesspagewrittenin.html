@@ -1,12 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>*Useless page*</title>
+  <meta charset="UTF-8">
+  <title>05staff's Website</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background-color: blue;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header bar */
+    header {
+      width: 100%;
+      background-color: #111;
+      color: white;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    .header-button {
+      background-color: #222;
+      border: none;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .header-button:hover {
+      background-color: #444;
+    }
+
+   
+    }
+
+    /* Secret hidden text */
+    .secret {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      color: black; /* hidden unless highlighted */
+      font-size: 14px;
+      z-index: 0;
+      user-select: text;
+    }
+  </style>
 </head>
 <body>
-<h1>The title and the link is saying the truth</h1>
 
+  <!-- Header with buttons -->
+  <header>
+    <a href="#" class="header-button" target="_blank">Home</a>
+    <a href="anotheranotheranotheruselesspagewrittenin.html" class="header-button" target="_blank">Another useless page</a>
+    <a href="https://discord.gg/NsqEmNtQyn" class="header-button" target="_blank">Discord</a>
+     <a href="terms.html" class="header-button" target="_blank">Terms</a>
+    <a href="actualpage.html" class="header-button" target="_blank">Actual Website</a>
+  </header>
 
+  <h1>Useless Page</h1>
+  <p>Looks like no important info is written, yet.</p>
+  
+
+ 
 </body>
 </html>
