@@ -1,4 +1,7 @@
-# This github repository is not a file nor a program but rather a website, the original  creator is 05staff,
+# About the repos.
+### This is NOT a file, nor a program but a WEBSITE
+
+
 It's a small portfolio for me, I've made it for cool stuff. I can post stuffs like deving, scripting. I personally like html and lua.
 
 print("hello this is just a silly website :3") 
