@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Working reCAPTCHA v2 Checkbox</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>✅ reCAPTCHA v2 Checkbox Test</h1>
+
+  <form id="captcha-form" action="#" onsubmit="return onSubmit(event)">
+    <div class="g-recaptcha" data-sitekey="6LeZofMrAAAAAIMMBRzb0WYGLMqAZboJmNT-JkNd"></div>
+    <br />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function onSubmit(e) {
+      e.preventDefault();
+
+      const response = grecaptcha.getResponse();
+      if (!response) {
+        alert("❌ Please complete the CAPTCHA!");
+        return false;
+      }
+
+      // In production, send `response` to your server for verification
+      alert("✅ CAPTCHA passed! Token:\n" + response);
+
+      grecaptcha.reset(); // optional: reset for another try
+      return false;
+    }
+  </script>
+</body>
+</html>

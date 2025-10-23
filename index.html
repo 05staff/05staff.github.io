@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accept Our Terms!</title>
+  <script src="https://www.google.com/recaptcha/api.js?" async defer></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background: #f9f9f9;
+    }
+
+    #game {
+      background: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .version-history {
+      position: fixed;
+      bottom: 10px;
+      left: 130px;
+      font-size: 12px;
+      color: #666;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .google-button {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+
+    .google-button:hover {
+      background-color: #1669c1;
+    }
+
+    input[type="text"], input[type="range"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .level-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .version-tag {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      font-size: 12px;
+      color: #666;
+      background: rgba(255,255,255,0.8);
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    #slider-value {
+      font-weight: bold;
+      color: #1a73e8;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📜 Accept Our Terms</h1>
+<p>Welcome! You must complete all tasks to accept the terms.</p>
+
+<div id="game"></div>
+
+<script>
+  const levels = [
+    {
+      id: 1,
+      type: "checkbox",
+      text: "Accept our Terms and Services.",
+      task: "Check the box to accept the terms and click Continue.",
+      validate: () => document.getElementById("terms-checkbox-1").checked
+    },
+    {
+      id: 2,
+      type: "input",
+      text: "Which letter in this sentence is the most present?",
+      task: "Find the most present letter.",
+      answer: "letter e",
+      validate: (input) => input.trim().toLowerCase() === "letter e"
+    },
+    {
+      id: 3,
+      type: "math",
+      text: "Solve the math problem.",
+      task: "What is 5 × 6 - 39 + 4?",
+      answer: "-5",
+      validate: (input) => input.trim() === "-5"
+    },
+    {
+      id: 4,
+      type: "input",
+      text: "Which word is the most represented in the following blog?",
+      task: `Find the most used word in this <a href="https://05staff.github.io/blog.html" target="_blank" style="color:#1a73e8; text-decoration: underline;">blog</a>.`,
+      answer: "you",
+      validate: (input) => input.trim().toLowerCase() === "you"
+    },
+    {
+      id: 5,
+      type: "captcha",
+      text: "Prove you're human.",
+      task: "Complete the CAPTCHA below.",
+      validate: null
+    },
+    {
+      id: 6,
+      type: "checkbox",
+      text: "Agree to the term.",
+      task: "Do you know who Sonic is?",
+      validate: () => document.getElementById("terms-checkbox-2").checked
+    },
+    {
+      id: 7,
+      type: "input",
+      text: "Prove me who is Sonic.",
+      task: "Prove who Sonic is (use 2 adjectives: 'color', 'speed', and a 'name').",
+      validate: (input) => {
+        const normalized = input.trim().toLowerCase();
+        const acceptable = [
+          "blue fast hedgehog",
+          "fast blue hedgehog",
+          "sonic the hedgehog",
+          "a blue fast hedgehog",
+          "the blue fast hedgehog",
+          "the fast blue hedgehog"
+        ];
+        return acceptable.includes(normalized);
+      }
+    },
+    {
+      id: 8,
+      type: "slider",
+      text: "Adjust the volume bar.",
+      task: "Drag the slider to exactly 45, then 87, then 83 — in order.",
+      validate: () => sliderProgress === 3
+    },
+    {
+ 
+     }
+
+  ];
+
+  let currentLevel = 0;
+  let captchaWidgetId = null;
+  let sliderProgress = 0;
+
+  function loadLevel() {
+    const level = levels[currentLevel];
+    const gameDiv = document.getElementById("game");
+
+    if (level.type === "captcha") {
+      gameDiv.innerHTML = `
+        <div class="level-header">Level ${level.id}</div>
+        <p>${level.text}</p>
+        <p><strong>Task:</strong> ${level.task}</p>
+        <div id="recaptcha-container"></div>
+        <div id="message"></div>
+      `;
+      if (window.grecaptcha && grecaptcha.render) {
+        captchaWidgetId = grecaptcha.render('recaptcha-container', {
+          sitekey: '6LeZofMrAAAAAIMMBRzb0WYGLMqAZboJmNT-JkNd',
+          callback: onCaptchaSuccess
+        });
+      }
+    } else if (level.type === "checkbox") {
+      const checkboxId = level.id === 1 ? "terms-checkbox-1" : "terms-checkbox-2";
+      gameDiv.innerHTML = `
+        <div class="level-header">Level ${level.id}</div>
+        <p>${level.text}</p>
+        <p><strong>Task:</strong> ${level.task}</p>
+        <label><input type="checkbox" id="${checkboxId}"> I accept the Terms and Services</label><br/>
+        <button class="google-button" onclick="checkLevel()">Continue</button>
+        <div id="message"></div>
+      `;
+    } else if (level.type === "slider") {
+      sliderProgress = 0;
+      gameDiv.innerHTML = `
+        <div class="level-header">Level ${level.id}</div>
+        <p>${level.text}</p>
+        <p><strong>Task:</strong> ${level.task}</p>
+        <input type="range" id="volume-slider" min="0" max="100" value="0">
+        <div>Value: <span id="slider-value">0</span></div>
+        <button class="google-button" onclick="checkLevel()">Submit</button>
+        <div id="message"></div>
+      `;
+      const slider = document.getElementById("volume-slider");
+      const display = document.getElementById("slider-value");
+      slider.addEventListener("input", () => {
+        const value = parseInt(slider.value);
+        display.textContent = value;
+        handleSliderProgress(value);
+      });
+    } else {
+      gameDiv.innerHTML = `
+        <div class="level-header">Level ${level.id}</div>
+        <p>${level.text}</p>
+        <p><strong>Task:</strong> ${level.task}</p>
+        <input type="text" id="user-input" autocomplete="off" />
+        <button class="google-button" onclick="checkLevel()">Submit</button>
+        <div id="message"></div>
+      `;
+    }
+  }
+
+  function handleSliderProgress(value) {
+    const targets = [45, 87, 83];
+    if (Math.abs(value - targets[sliderProgress]) <= 1) { // small leniency
+      sliderProgress++;
+      const msg = document.getElementById("message");
+      msg.innerHTML = `<span style='color: green;'>✅ Correct value ${targets[sliderProgress - 1]} reached!</span>`;
+      if (sliderProgress === 3) {
+        msg.innerHTML += "<br>Now click Submit!";
+      }
+    }
+  }
+
+  function checkLevel() {
+    const level = levels[currentLevel];
+    const message = document.getElementById("message");
+    let success = false;
+
+    if (level.type === "checkbox") {
+      success = level.validate();
+    } else if (level.type === "slider") {
+      success = level.validate();
+    } else if (level.type !== "captcha") {
+      const userInput = document.getElementById("user-input")?.value || "";
+      success = level.validate(userInput);
+    }
+
+    if (success) {
+      message.innerHTML = "<span style='color: green;'>✅ Correct! Loading next level...</span>";
+      currentLevel++;
+      setTimeout(() => {
+        if (currentLevel < levels.length) loadLevel();
+        else showSuccess();
+      }, 1500);
+    } else {
+      message.innerHTML = "<span style='color: red;'>❌ Not yet correct. Try again.</span>";
+    }
+  }
+
+  function onCaptchaSuccess(token) {
+    const message = document.getElementById("message");
+    message.innerHTML = `<span style='color: green;'>✅ CAPTCHA passed!</span>`;
+    setTimeout(() => {
+      currentLevel++;
+      if (currentLevel < levels.length) loadLevel();
+      else showSuccess();
+    }, 1500);
+  }
+
+  function showSuccess() {
+    document.getElementById("game").innerHTML = `
+      <h2>🎉 You have accepted our terms!</h2>
+      <p>Thank you for completing all the tasks.</p>
+    `;
+  }
+
+  loadLevel();
+</script>
+
+<div class="version-tag">Version 3.4</div>
+<a href="https://05staff.github.io/version-history.html" class="version-history">Version History</a>
+
+</body>
+</html>
