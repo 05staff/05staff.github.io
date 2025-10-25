@@ -65,6 +65,63 @@
     .level-header {
       font-weight: bold;
       margin-bottom: 10px;
+
+    }
+    header {
+      background: linear-gradient(90deg, #1a73e8, #4285f4);
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    .nav-buttons button {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      margin-right: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .nav-buttons button:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Join Us Button */
+    .join-us-btn {
+      background-color: white;
+      color: #1a73e8;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .join-us-btn:hover {
+      background-color: #e8f0fe;
+      transform: scale(1.05);
     }
 
     .version-tag {
@@ -87,6 +144,18 @@
     }
   </style>
 </head>
+   <header>
+    <div class="header-left">
+      <img src="https://img.icons8.com/?size=1200&id=xv1kwIOOUeFZ&format=jpg" alt="Logo" class="logo">
+      <div class="nav-buttons">
+        <button onclick="location.href='05staff.github.io'">Home</button>
+        <button onclick="location.href='game.html'">TOS Game</button>
+        
+      </div>
+    </div>
+    <!-- Join Us button on the right -->
+    <button class="join-us-btn" onclick="location.href='https://discord.gg/NsqEmNtQyn'">Discord Server</button>
+  </header>
 <body>
 
 <h1>📜 Accept Our Terms</h1>
