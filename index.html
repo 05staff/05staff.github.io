@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Silly Little Element Maker 3.0</title>
+</title>Element Maker</title>
 
 <style>
     body {
@@ -13,7 +13,7 @@
     }
     h1 { text-align: center; }
 
-    input, textarea {
+    input, textarea, select {
         width: 100%;
         padding: 10px;
         margin-top: 10px;
@@ -38,11 +38,10 @@
     /* Rectangle Element Box */
     #card {
         width: 260px;
-        height: 330px;
+        height: 350px;
         margin: 30px auto;
         padding: 15px;
         border-radius: 6px;
-        background: white;
         border: 3px solid #111;
         display: none;
         position: relative;
@@ -82,7 +81,14 @@
         text-align: center;
         margin-top: 10px;
         font-size: 16px;
-        color: #444;
+        color: #333;
+    }
+
+    #group {
+        text-align: center;
+        margin-top: 5px;
+        font-size: 15px;
+        font-weight: bold;
     }
 
     #description {
@@ -97,7 +103,7 @@
 </head>
 <body>
 
-<h1>Silly Little Element Maker — Now With Atomic Weight</h1>
+<h1>Silly Little Element Maker — With Groups!</h1>
 
 <label>Element Name</label>
 <input id="elName">
@@ -111,6 +117,13 @@
 <label>Atomic Weight</label>
 <input id="elWeight" type="number">
 
+<label>Element Group (Family)</label>
+<select id="elGroup">
+    <option value="none">— None —</option>
+    <option value="alkali">Alkali Metal</option>
+    <option value="alkaline">Alkaline Earth Metal</option>
+</select>
+
 <label>Description</label>
 <textarea id="elDesc" rows="4"></textarea>
 
@@ -121,6 +134,7 @@
     <div id="atomic-weight"></div>
     <div id="symbol"></div>
     <div id="name"></div>
+    <div id="group"></div>
     <div id="bohr"></div>
     <div id="description"></div>
 </div>
@@ -152,7 +166,9 @@ function generateCard() {
     let number = parseInt(document.getElementById("elNumber").value);
     let weight = document.getElementById("elWeight").value;
     let desc = document.getElementById("elDesc").value;
+    let group = document.getElementById("elGroup").value;
 
+    // Fill card text
     document.getElementById("atomic-number").innerText = number;
     document.getElementById("atomic-weight").innerText = weight;
     document.getElementById("symbol").innerText = symbol;
@@ -160,10 +176,28 @@ function generateCard() {
     document.getElementById("bohr").innerText = bohrShells(number);
     document.getElementById("description").innerText = desc;
 
+    // Group label text
+    let groupText = "";
+    let card = document.getElementById("card");
+
+    if (group === "alkali") {
+        groupText = "Alkali Metal";
+        card.style.background = "#ffdddd"; // light red
+    } else if (group === "alkaline") {
+        groupText = "Alkaline Earth Metal";
+        card.style.background = "#fff6c7"; // light yellow
+    } else {
+        groupText = "";
+        card.style.background = "white";
+    }
+
+    document.getElementById("group").innerText = groupText;
+
     document.getElementById("card").style.display = "block";
     document.getElementById("downloadBtn").style.display = "inline-block";
 }
 
+// Download card as PNG
 function downloadImage() {
     const card = document.getElementById("card");
     html2canvas(card).then(canvas => {
