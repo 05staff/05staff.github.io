@@ -1,6 +1,244 @@
 <!DOCTYPE html>
 <html>
+<head><!DOCTYPE html>
+<html>
 <head>
+<title>Element maker</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    background: #f0f0f0;
+}
+h1 { text-align: center; }
+
+input, textarea, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    font-size: 16px;
+}
+
+button { cursor: pointer; }
+
+#card {
+    width: 260px;
+    height: 460px;
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 6px;
+    border: 3px solid #111;
+    display: none;
+    position: relative;
+    box-shadow: 0 0 10px #0002;
+    background: white;
+}
+
+#atomic-number { position:absolute; top:8px; left:10px; font-size:28px; font-weight:bold; }
+#atomic-weight { position:absolute; top:8px; right:10px; font-size:18px; font-weight:bold; }
+#neutrons { position:absolute; top:40px; right:10px; font-size:16px; font-weight:bold; }
+
+#symbol { text-align:center; margin-top:90px; font-size:72px; font-weight:bold; }
+#name { text-align:center; margin-top:10px; font-size:24px; }
+#group { text-align:center; margin-top:5px; font-size:15px; font-weight:bold; }
+#state { text-align:center; margin-top:5px; font-size:14px; font-weight:bold; color:#333; }
+#decay { text-align:center; margin-top:3px; font-size:14px; font-weight:bold; color:#900; }
+#bohr { text-align:center; margin-top:10px; font-size:16px; }
+#description { margin-top:10px; font-size:14px; padding:0 5px; text-align:center; min-height:50px; border:1px dashed #ccc; }
+
+.format-btns button { width:auto; display:inline-block; margin-right:4px; }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<h1>Silly Element Maker 7.0</h1>
+
+<label>Element Name</label>
+<input id="elName">
+
+<label>Symbol</label>
+<input id="elSymbol">
+
+<label>Atomic Number</label>
+<input id="elNumber" type="number">
+
+<label>Atomic Weight</label>
+<input id="elWeight" type="number">
+
+<label>Element Family</label>
+<select id="elFamily">
+    <option value="none">— None —</option>
+    <option value="alkali">Alkali Metal</option>
+    <option value="alkaline">Alkaline Earth Metal</option>
+    <option value="transition">Transition Metal</option>
+    <option value="post">Post-Transition Metal</option>
+    <option value="metalloid">Metalloid</option>
+    <option value="halogen">Halogen</option>
+    <option value="noble">Noble Gas</option>
+    <option value="lanthanide">Lanthanide</option>
+    <option value="actinide">Actinide</option>
+    <option value="custom">Custom Family</option>
+</select>
+
+<label>Custom Family Name</label>
+<input id="customFamilyName">
+
+<label>Custom Family Color (hex or name)</label>
+<input id="customFamilyColor" placeholder="#ff00aa or red">
+
+<label>State of Matter</label>
+<select id="stateSelect">
+    <option value="Solid">Solid</option>
+    <option value="Liquid">Liquid</option>
+    <option value="Gas">Gas</option>
+    <option value="Plasma">Plasma</option>
+</select>
+
+<label>Radioactive Decay</label>
+<select id="decaySelect">
+    <option value="None">None</option>
+    <option value="Alpha (α)">Alpha (α)</option>
+    <option value="Beta (β)">Beta (β)</option>
+    <option value="Gamma (γ)">Gamma (γ)</option>
+</select>
+
+<label>Description</label>
+<div class="format-btns">
+    <button type="button" onclick="formatText('bold')"><b>B</b></button>
+    <button type="button" onclick="formatText('italic')"><i>I</i></button>
+    <button type="button" onclick="formatText('underline')"><u>U</u></button>
+    <button type="button" onclick="changeColor()">Color</button>
+</div>
+<div id="elDesc" contenteditable="true" style="border:1px dashed #ccc; padding:5px; min-height:50px;"></div>
+
+<button onclick="generateCard()">✨ Make Element ✨</button>
+
+<div id="card">
+    <div id="atomic-number"></div>
+    <div id="atomic-weight"></div>
+    <div id="neutrons"></div>
+    <div id="symbol"></div>
+    <div id="name"></div>
+    <div id="group"></div>
+    <div id="state"></div>
+    <div id="decay"></div>
+    <div id="bohr"></div>
+    <div id="description"></div>
+</div>
+
+<button id="downloadBtn" style="display:none;" onclick="downloadImage()">📥 Download Image</button>
+
+<script>
+function bohrShells(Z) {
+    const capacities = [2,8,18,32,50,72,98];
+    const labels = ["K","L","M","N","O","P","Q"];
+    let shells = [];
+    let remaining = Z;
+    for(let i=0;i<capacities.length;i++){
+        if(remaining<=0) break;
+        let used = Math.min(remaining, capacities[i]);
+        shells.push(labels[i]+used);
+        remaining -= used;
+    }
+    return shells.join(", ");
+}
+
+// Text formatting functions
+function formatText(command){
+    document.execCommand(command,false,null);
+}
+
+function changeColor(){
+    let color = prompt("Enter a color name or hex code:");
+    if(color) document.execCommand('foreColor', false, color);
+}
+
+// Generate card
+function generateCard(){
+    let name=document.getElementById("elName").value;
+    let symbol=document.getElementById("elSymbol").value;
+    let number=parseInt(document.getElementById("elNumber").value);
+    let weight=parseInt(document.getElementById("elWeight").value);
+    let family=document.getElementById("elFamily").value;
+    let customName=document.getElementById("customFamilyName").value;
+    let customColor=document.getElementById("customFamilyColor").value;
+    let state=document.getElementById("stateSelect").value;
+    let decay=document.getElementById("decaySelect").value;
+    let desc=document.getElementById("elDesc").innerHTML;
+
+    let neutrons = weight - number;
+
+    document.getElementById("atomic-number").innerText = number;
+    document.getElementById("atomic-weight").innerText = weight;
+    document.getElementById("neutrons").innerText = "n: "+neutrons;
+    document.getElementById("symbol").innerText = symbol;
+    document.getElementById("name").innerText = name;
+    document.getElementById("bohr").innerText = bohrShells(number);
+    document.getElementById("description").innerHTML = desc;
+    document.getElementById("state").innerText = state;
+    document.getElementById("decay").innerText = decay;
+
+    const familyColors={
+        none:"white",
+        alkali:"#ffdddd",
+        alkaline:"#fff6c7",
+        transition:"#d0e6ff",
+        post:"#e0e0ff",
+        metalloid:"#e5ffe5",
+        halogen:"#ffe5f5",
+        noble:"#e5f7ff",
+        lanthanide:"#ffeedd",
+        actinide:"#f7ddff"
+    };
+
+    let familyLabel="";
+    let card=document.getElementById("card");
+    if(family==="custom"){
+        familyLabel=customName;
+        card.style.background=customColor || "white";
+    } else{
+        const names={
+            none:"",
+            alkali:"Alkali Metal",
+            alkaline:"Alkaline Earth Metal",
+            transition:"Transition Metal",
+            post:"Post-Transition Metal",
+            metalloid:"Metalloid",
+            halogen:"Halogen",
+            noble:"Noble Gas",
+            lanthanide:"Lanthanide",
+            actinide:"Actinide"
+        };
+        familyLabel=names[family];
+        card.style.background=familyColors[family];
+    }
+    document.getElementById("group").innerText = familyLabel;
+
+    card.style.display="block";
+    document.getElementById("downloadBtn").style.display="inline-block";
+}
+
+// Download as PNG
+function downloadImage(){
+    const card=document.getElementById("card");
+    html2canvas(card).then(canvas=>{
+        const link=document.createElement("a");
+        link.download="element.png";
+        link.href=canvas.toDataURL();
+        link.click();
+    });
+}
+</script>
+
+</body>
+</html>
+
 <title>Silly Little Element Maker 6.0</title>
 
 <style>
