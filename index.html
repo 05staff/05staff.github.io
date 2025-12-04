@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-</title>Element Maker</title>
+<title>Silly Little Element Maker 6.0</title>
 
 <style>
     body {
@@ -35,10 +35,10 @@
     }
     button:hover { background: #555; }
 
-    /* Rectangle Element Box */
+    /* Element card */
     #card {
         width: 260px;
-        height: 350px;
+        height: 420px;
         margin: 30px auto;
         padding: 15px;
         border-radius: 6px;
@@ -46,6 +46,7 @@
         display: none;
         position: relative;
         box-shadow: 0 0 10px #0002;
+        background: white;
     }
 
     #atomic-number {
@@ -64,9 +65,17 @@
         font-weight: bold;
     }
 
+    #neutrons {
+        position: absolute;
+        top: 40px;
+        right: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
     #symbol {
         text-align: center;
-        margin-top: 60px;
+        margin-top: 90px;
         font-size: 72px;
         font-weight: bold;
     }
@@ -77,18 +86,17 @@
         font-size: 24px;
     }
 
-    #bohr {
-        text-align: center;
-        margin-top: 10px;
-        font-size: 16px;
-        color: #333;
-    }
-
     #group {
         text-align: center;
         margin-top: 5px;
         font-size: 15px;
         font-weight: bold;
+    }
+
+    #bohr {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 16px;
     }
 
     #description {
@@ -103,7 +111,7 @@
 </head>
 <body>
 
-<h1>Silly Little Element Maker — With Groups!</h1>
+<h1>Silly Little Element Maker — Custom Families Edition</h1>
 
 <label>Element Name</label>
 <input id="elName">
@@ -117,12 +125,27 @@
 <label>Atomic Weight</label>
 <input id="elWeight" type="number">
 
-<label>Element Group (Family)</label>
-<select id="elGroup">
+<label>Element Family</label>
+<select id="elFamily">
     <option value="none">— None —</option>
     <option value="alkali">Alkali Metal</option>
     <option value="alkaline">Alkaline Earth Metal</option>
+    <option value="transition">Transition Metal</option>
+    <option value="post">Post-Transition Metal</option>
+    <option value="metalloid">Metalloid</option>
+    <option value="halogen">Halogen</option>
+    <option value="noble">Noble Gas</option>
+    <option value="lanthanide">Lanthanide</option>
+    <option value="actinide">Actinide</option>
+    <option value="custom">Custom Family</option>
 </select>
+
+<!-- Custom family fields -->
+<label>Custom Family Name (if selected)</label>
+<input id="customFamilyName">
+
+<label>Custom Family Color (hex or name)</label>
+<input id="customFamilyColor" placeholder="#ff00aa or red or cyan">
 
 <label>Description</label>
 <textarea id="elDesc" rows="4"></textarea>
@@ -132,6 +155,7 @@
 <div id="card">
     <div id="atomic-number"></div>
     <div id="atomic-weight"></div>
+    <div id="neutrons"></div>
     <div id="symbol"></div>
     <div id="name"></div>
     <div id="group"></div>
@@ -144,15 +168,13 @@
 <script>
 // Auto Bohr shell calculator
 function bohrShells(Z) {
-    const capacities = [2, 8, 18, 32, 50, 72, 98]; 
+    const capacities = [2, 8, 18, 32, 50, 72, 98];
     const labels = ["K","L","M","N","O","P","Q"];
-
     let shells = [];
     let remaining = Z;
 
     for (let i = 0; i < capacities.length; i++) {
         if (remaining <= 0) break;
-
         let used = Math.min(remaining, capacities[i]);
         shells.push(labels[i] + used);
         remaining -= used;
@@ -164,40 +186,69 @@ function generateCard() {
     let name = document.getElementById("elName").value;
     let symbol = document.getElementById("elSymbol").value;
     let number = parseInt(document.getElementById("elNumber").value);
-    let weight = document.getElementById("elWeight").value;
+    let weight = parseInt(document.getElementById("elWeight").value);
+    let family = document.getElementById("elFamily").value;
+    let customName = document.getElementById("customFamilyName").value;
+    let customColor = document.getElementById("customFamilyColor").value;
     let desc = document.getElementById("elDesc").value;
-    let group = document.getElementById("elGroup").value;
 
-    // Fill card text
+    // Calculate neutrons
+    let neutrons = weight - number;
+
+    // Fill card fields
     document.getElementById("atomic-number").innerText = number;
     document.getElementById("atomic-weight").innerText = weight;
+    document.getElementById("neutrons").innerText = "n: " + neutrons;
     document.getElementById("symbol").innerText = symbol;
     document.getElementById("name").innerText = name;
     document.getElementById("bohr").innerText = bohrShells(number);
     document.getElementById("description").innerText = desc;
 
-    // Group label text
-    let groupText = "";
+    // Family colors
+    const familyColors = {
+        none: "white",
+        alkali: "#ffdddd",
+        alkaline: "#fff6c7",
+        transition: "#d0e6ff",
+        post: "#e0e0ff",
+        metalloid: "#e5ffe5",
+        halogen: "#ffe5f5",
+        noble: "#e5f7ff",
+        lanthanide: "#ffeedd",
+        actinide: "#f7ddff"
+    };
+
+    let familyLabel = "";
     let card = document.getElementById("card");
 
-    if (group === "alkali") {
-        groupText = "Alkali Metal";
-        card.style.background = "#ffdddd"; // light red
-    } else if (group === "alkaline") {
-        groupText = "Alkaline Earth Metal";
-        card.style.background = "#fff6c7"; // light yellow
+    if (family === "custom") {
+        familyLabel = customName;
+        card.style.background = customColor;
     } else {
-        groupText = "";
-        card.style.background = "white";
+        const names = {
+            none: "",
+            alkali: "Alkali Metal",
+            alkaline: "Alkaline Earth Metal",
+            transition: "Transition Metal",
+            post: "Post-Transition Metal",
+            metalloid: "Metalloid",
+            halogen: "Halogen",
+            noble: "Noble Gas",
+            lanthanide: "Lanthanide",
+            actinide: "Actinide"
+        };
+        familyLabel = names[family];
+        card.style.background = familyColors[family];
     }
 
-    document.getElementById("group").innerText = groupText;
+    document.getElementById("group").innerText = familyLabel;
 
-    document.getElementById("card").style.display = "block";
+    // Show card + download button
+    card.style.display = "block";
     document.getElementById("downloadBtn").style.display = "inline-block";
 }
 
-// Download card as PNG
+// Download card
 function downloadImage() {
     const card = document.getElementById("card");
     html2canvas(card).then(canvas => {
