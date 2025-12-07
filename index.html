@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 
-    <head>
+      <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>05staff's Website</title>
+  <title>Simple Layout</title>
 
-  <!-- 
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <style>
+    /* Basic Reset */
+    body, h1, p {
+      margin: 0;
+      padding: 0;
+    }
 
+    /* Page Colors */
+    body {
+      background-color: #f0f0f0; /* light gray body */
+      font-family: Arial, sans-serif;
+    }
 
-  <!-- 
-    - google font link
-  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;900&display=swap"
-    rel="stylesheet">
+    /* Header */
+    header {
+      background-color: #007bff; /* blue */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
 
- </head>
+    /* Main Body Area */
+    main {
+      padding: 20px;
+      background-color: #ffffff; /* white */
+      margin: 20px;
+      border-radius: 8px;
+    }
 
-     <header class="header" data-header>
-    <div class="container">
+    /* Footer */
+    footer {
+      background-color: #007bff; /* blue */
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 
-      <h1>
-        <a href="#" class="logo">Aromax</a>
-      </h1>
+<body>
 
-      <nav class="navbar container" data-navbar>
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <a href="#" class="navbar-link" data-nav-link>Home</a>
-          </li>
-
-        </ul>
-      </nav>
-<form action="/discord">
-      <button class="btn btn-secondary">Join</button>
-</form>
-      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggle-btn>
-        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
-        <ion-icon name="close-outline" class="close-icon"></ion-icon>
-      </button>
-
-    </div>
+  <header>
+    <h1>My Simple Website</h1>
   </header>
+
+  <main>
+    <p>This is the main body content area.  
+    You can put anything here!</p>
+  </main>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+</body>
+</html>
+
