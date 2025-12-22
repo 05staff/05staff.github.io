@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Our Server</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #2C2F33;
+      color: white;
+      padding: 40px;
+    }
+    h1 {
+      color: #5865F2;
+    }
+    a {
+      color: #57F287;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>About Our Discord Server</h1>
+
+<p>
+Our server was created to bring people together. Whether you're here to chat,
+game, share memes, or make friends — you're welcome.
+</p>
+
+<p>
+We focus on:
+</p>
+
+<ul>
+  <li>✨ Friendly community</li>
+  <li>🎮 Gaming & events</li>
+  <li>😂 Memes & fun</li>
+  <li>🛡️ Active moderation</li>
+</ul>
+
+<p>
+<a href="index.html">← Back to Home</a>
+</p>
+
+</body>
+</html>
