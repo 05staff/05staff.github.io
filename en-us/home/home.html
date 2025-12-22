@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <title>My Cool Blocky Site</title>
-
-  <!-- Minecraft-like font -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>En-Us | Home | 05staff's Websie</title>
 
   <style>
+    /* Minecraft Fonts */
+    @font-face {
+      font-family: 'Minecraft';
+      src: url('../fonts/Minecraft.ttf');
+    }
+
+    @font-face {
+      font-family: 'MinecraftTen';
+      src: url('../fonts/MinecraftTen-VGORe.ttf');
+    }
+
+    /* General Styles */
     body {
       margin: 0;
       background-color: #1b1b1b;
       color: white;
-      font-family: 'Press Start 2P', cursive;
+      font-family: 'Minecraft', monospace;
     }
 
     header {
@@ -25,6 +34,7 @@
     header h1 {
       margin: 0;
       font-size: 24px;
+      font-family: 'MinecraftTen', monospace;
     }
 
     nav {
@@ -38,12 +48,62 @@
       text-decoration: none;
       margin: 0 15px;
       font-size: 12px;
+      font-family: 'MinecraftTen', monospace;
     }
 
     nav a:hover {
       color: white;
     }
 
+    /* Dropdown menu styles */
+    .dropdown {
+      display: inline-block;
+      position: relative;
+      margin-left: 20px;
+    }
+
+    .dropbtn {
+      background-color: #2a2a2a;
+      color: #6cff6c;
+      padding: 10px 15px;
+      font-family: 'MinecraftTen', monospace;
+      border: 4px solid #1f4f1f;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+
+    .dropbtn:hover {
+      color: white;
+      background-color: #333;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #2f2f2f;
+      min-width: 120px;
+      border: 2px solid #4a4a4a;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #6cff6c;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+      font-family: 'MinecraftTen', monospace;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #3c3c3c;
+      color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Page content */
     .container {
       padding: 40px;
       max-width: 900px;
@@ -65,6 +125,7 @@
       padding: 15px 20px;
       text-decoration: none;
       margin-top: 15px;
+      font-family: 'MinecraftTen', monospace;
     }
 
     .button:hover {
@@ -78,6 +139,7 @@
       padding: 20px;
       font-size: 10px;
     }
+
   </style>
 </head>
 <body>
@@ -88,10 +150,19 @@
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Downloads</a>
-    <a href="#">Contact</a>
+    <a href="/en-us/home.html">Home</a>
+    <a href="/en-us/about.html">About</a>
+    <a href="/en-us/downloads.html">Downloads</a>
+    <a href="/en-us/contact.html">Contact</a>
+
+    <div class="dropdown">
+      <button class="dropbtn">Language ▾</button>
+      <div class="dropdown-content">
+        <a href="/en-us/home.html">English</a>
+        <a href="/fr-fr/home.html">Français</a>
+        <a href="/pl-pl/home.html">Polski</a>
+      </div>
+    </div>
   </nav>
 
   <div class="container">
