@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>New Server Update | 05staff's Server</title>
+  <link rel="icon" type="image/png" href="/images/favicon-32x32.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <!-- Dark/Light Mode Toggle -->
+  <button id="theme-toggle">Toggle Mode</button>
+
+  <!-- Header/Nav/Footer Templates -->
+  <div id="header-placeholder"></div>
+  <div id="nav-placeholder"></div>
+
+  <div class="container">
+    <!-- Article Content -->
+    <div class="card">
+      <h2>New Server Update: Adventure Expansion!</h2>
+      <p style="font-family: 'MinecraftTen', monospace; font-size: 12px; color: var(--link-color);">
+        Uploaded by <strong>05staff</strong> on <strong>December 22, 2025</strong>
+      </p>
+
+      <p>
+        We’re thrilled to announce the latest update to our server! This update introduces a brand new adventure
+        expansion, including:
+      </p>
+      <ul>
+        <li>New biomes with unique blocks and mobs.</li>
+        <li>Special dungeons with rare loot.</li>
+        <li>Seasonal events and challenges.</li>
+      </ul>
+      <p>
+        Players can now explore the enchanted forest, uncover hidden caves, and collect exclusive items that
+        were not available before. Make sure to team up with friends and try out the new events for a chance
+        to win unique rewards.
+      </p>
+      <p>
+        Our development team has also made improvements to server performance, reducing lag and improving
+        overall stability for all players.
+      </p>
+
+      <a href="/en-us/articles.html" class="button">Back to Articles</a>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+
+  <!-- JS to load templates & theme toggle -->
+  <script>
+    function loadTemplate(id, url) {
+      fetch(url)
+        .then(response => response.text())
+        .then(data => { document.getElementById(id).innerHTML = data; });
+    }
+
+    loadTemplate('header-placeholder', '/templates/header.html');
+    loadTemplate('nav-placeholder', '/templates/nav.html');
+    loadTemplate('footer-placeholder', '/templates/footer.html');
+
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+
+</body>
+</html>
