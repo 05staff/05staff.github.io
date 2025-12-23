@@ -59,14 +59,18 @@
 
     /* General Styles */
     body {
-      margin: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'MinecraftTen', monospace;
-      line-height: 1.4;
-      letter-spacing: 1px;
-      transition: background-color 0.3s, color 0.3s;
-    }
+  margin: 0;
+  min-height: 100vh;          /* full screen height */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'MinecraftTen', monospace;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 
     header {
       background: var(--header-bg);
@@ -150,10 +154,12 @@
     }
 
     .container {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
+  padding: 40px;
+  max-width: 900px;
+  margin: auto;
+  flex: 1;   /* 👈 this pushes the footer down */
     }
+
 
     .card {
       background-color: var(--card-bg);
