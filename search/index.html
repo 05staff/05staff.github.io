@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Projects</title>
+
+  <style>
+    /* Search box */
+    #search-input {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    /* Results list */
+    #results-container {
+      list-style: none;
+      padding: 0;
+      max-width: 400px;
+    }
+
+    #results-container li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #results-container li a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+    }
+
+    #results-container li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="search-input" placeholder="Search this site...">
+  <ul id="results-container"></ul>
+
+  <h1>My Projects</h1>
+  <p>Here are some cool things I’ve built.</p>
+
+  <!-- Script goes AFTER the elements -->
+  <script src="https://unpkg.com/simple-jekyll-search@latest/dest/simple-jekyll-search.min.js"></script>
+  <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      json: '{{ site.baseurl }}/search.json',
+      searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+      noResultsText: 'No results found'
+    });
+  </script>
+</body>
+</html>
