@@ -1,2 +1,3 @@
 # 05staff.github.io
-A website for me and my projects.
+This website is used for projects
+checkout https://05staff.github.io/en-us/
