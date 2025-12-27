@@ -303,6 +303,29 @@ title: Minecraft Server
       <p>
         Below are in-game screenshot!
       </p>
+      <h2>Minecraft Server Status</h2>
+<div id="mc-status">Checking server status...</div>
+
+<script>
+fetch("https://api.mcsrvstat.us/2/offer-unit.gl.joinmc.link")
+  .then(res => res.json())
+  .then(data => {
+    const statusDiv = document.getElementById("mc-status");
+
+    if (data.online) {
+      statusDiv.innerHTML = `
+        🟢 Server Online<br>
+        Players: ${data.players.online} / ${data.players.max}
+      `;
+    } else {
+      statusDiv.innerHTML = "🔴 Server Offline";
+    }
+  })
+  .catch(() => {
+    document.getElementById("mc-status").innerHTML = "⚠️ Status unavailable";
+  });
+</script>
+
      <div class="thumbnail-grid">
   <a href="/images/thumbnail1.png">
     <img src="/images/thumbnail1.png" alt="In-game screenshot 1">
