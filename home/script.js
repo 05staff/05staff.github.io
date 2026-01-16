@@ -39,4 +39,10 @@ menuBtn.onclick = () => {
   sideNav.classList.toggle('active');
 };
 
+/* ===== FOOTER BUTTON ===== */
+document.querySelector('.footer-btn').onclick = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+
 applyMenuStyle();
