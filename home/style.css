@@ -1,0 +1,118 @@
+:root {
+  --bg: #ffffff;
+  --text: #111;
+  --accent: #5865f2;
+}
+
+body.dark {
+  --bg: #0f0f14;
+  --text: #f2f2f2;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: var(--accent);
+  color: white;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+footer {
+  padding: 1.5rem;
+  text-align: center;
+  border-top: 1px solid #ccc;
+}
+
+.footer-controls {
+  margin-bottom: 0.75rem;
+}
+
+.footer-controls button {
+  margin: 0 0.5rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+
+/* Hamburger mode */
+body.hamburger .menu-btn {
+  display: block;
+}
+
+body.hamburger .nav {
+  display: none;
+  flex-direction: column;
+  background: var(--accent);
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+body.hamburger .nav.open {
+  display: flex;
+}
+
+/* Mobile fallback */
+@media (max-width: 700px) {
+  body:not(.hamburger) .nav {
+    display: none;
+  }
+  body:not(.hamburger) .menu-btn {
+    display: block;
+  }
+}
