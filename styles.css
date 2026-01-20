@@ -176,6 +176,7 @@ img, video {
   gap: 20px;
 }
 
+
 card {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -183,4 +184,3 @@ card {
   padding: 20px;
   color: white;
 }
-
