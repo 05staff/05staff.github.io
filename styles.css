@@ -198,3 +198,8 @@ card {
 .discord-btn:hover {
     background-color: #4752C4;
 }
+
+a.active {
+    background-color: white;
+    color: black;
+}
