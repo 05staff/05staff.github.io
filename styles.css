@@ -184,3 +184,17 @@ card {
   padding: 20px;
   color: white;
 }
+
+.discord-btn {
+    display: inline-block;
+    background-color: #5865F2; /* Discord blue */
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.discord-btn:hover {
+    background-color: #4752C4;
+}
