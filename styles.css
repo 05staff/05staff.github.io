@@ -192,7 +192,7 @@ card {
     padding: 12px 20px;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 6px;
+    border-radius: 0px;
 }
 
 .discord-btn:hover {
