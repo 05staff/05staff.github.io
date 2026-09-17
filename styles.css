@@ -1,0 +1,166 @@
+/* Idk I'll make some type of minecraft thingy  */
+
+.button {
+  font-family: "Normal", sans-serif;
+  background-color: #0051ff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(16, 45, 175);
+}
+
+.link-button {
+  font-family: "Normal", sans-serif;
+  background-color: transparent;
+  color: #0051ff;
+  padding: 10px 20px;
+  border: 2px solid #0051ff;
+  border-radius: 0;
+  cursor: pointer;
+}
+.link-button:hover {
+  background-color: #0051ff;
+  color: white;
+}
+
+.divframe { 
+  border: 2px solid #0051ff;
+  max-width: 1050px;
+  padding: 20px;
+  margin: 20px 0;
+  margin: 20px auto;
+    padding: 12px;
+}
+
+
+
+@font-face {
+    font-family: "Normal";
+    src: url("Fonts/DefaultFont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Small";
+    src: url("Fonts/SmallFont.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Title";
+    src: url("Fonts/TitleFont.ttf") format("truetype");
+}
+
+h1 {
+    font-family: "Title", sans-serif;
+    font-size: 36px;
+}
+
+body {
+    text-align: center;
+    font-family: "Normal", sans-serif;
+    font-size: 16px;
+}
+
+footer {
+    font-family: "Small", sans-serif;
+    font-size: 12px;
+}
+
+screenshotgallerydivframe {
+    border: 2px solid #0051ff;
+    max-width: 1050px;
+    padding: 20px;
+    margin: 20px 0;
+    margin: 20px auto;
+    padding: 12px;
+}
+
+
+
+
+header {
+    font-family: "Title", sans-serif;
+    background-color: #2c2c2c; 
+    max-width: 1050px;
+    margin: 20px auto;
+    padding: 12px;
+    border: 3px solid #000000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.nav-button {
+    font-family: "Title", sans-serif;
+    font-size: 16px;
+    color: #1e1e1e;
+    
+    background-color: #d0d0d0;
+    
+    border-top: 2px solid #3c3c3c;
+    border-left: 2px solid #3c3c3c;
+    border-right: 2px solid #3c3c3c;
+    border-bottom: 5px solid #4a4a4a;
+    border-radius: 0;
+    
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.05s ease;
+}
+
+.nav-button:hover {
+    background-color: #e0e0e0;
+    border-bottom-color: #5a5a5a;
+}
+
+.nav-button:active,
+.nav-button.active {
+    background-color: #007a00;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    margin-top: 3px; 
+}
+
+.nav-button.shop {
+    margin-left: auto;
+    background-color: #82acd8;
+    border-bottom-color: #4a6b8f;
+    color: #ffffff;
+}
+
+.nav-websitetitle {
+    font-family: "Title", sans-serif;
+    font-size: 24px;
+    color: #ffffff;
+    margin-left: auto;
+}
+
+.nav-button.shop:hover {
+    background-color: #93bde9;
+    border-bottom-color: #5b7ca0;
+}
+
+.nav-button.shop:active,
+.nav-button.shop.active {
+    background-color: #2f42eb;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    margin-top: 3px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("Images/Screenshot01.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
