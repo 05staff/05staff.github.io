@@ -76,7 +76,11 @@ body {
 
 
 .fakeScreen {
-  background-color: #151515;
+  background-color: black;
+  background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  height: 100vh;;
   box-sizing: border-box;
   width: 1100px;
   margin: auto;
