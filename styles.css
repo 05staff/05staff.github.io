@@ -64,7 +64,7 @@ body {
 }
 
 .fakeMenu {
-  width: 700px;
+  width: 1100px;
   box-sizing: border-box;
   height: 25px;
   background-color: #bbb;
@@ -76,7 +76,7 @@ body {
 .fakeScreen {
   background-color: #151515;
   box-sizing: border-box;
-  width: 700px;
+  width: 1100px;
   margin: auto;
   padding: 20px;
   border-bottom-left-radius: 5px;
