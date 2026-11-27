@@ -33,6 +33,11 @@ pre {
   margin: 0;
 }
 
+body {
+  background-color: #272727;
+  padding: 10px;
+}
+
 .fakeButtons {
   height: 10px;
   width: 10px;
@@ -66,4 +71,26 @@ pre {
   margin: 0 auto;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
+}
+
+.fakeScreen {
+  background-color: #151515;
+  box-sizing: border-box;
+  width: 550px;
+  margin: 0 auto;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+p {
+  position: relative;
+  left: 50%;
+  margin-left: -8.5em;
+  text-align: left;
+  font-size: 1.25em;
+  font-family: monospace;
+  white-space: normal;
+  overflow: hidden;
+  width: 0;
 }
