@@ -64,7 +64,6 @@ body {
 }
 
 .fakeMenu {
-  margin-top: 40%;
   width: 1100px;
   box-sizing: border-box;
   height: 25px;
@@ -76,11 +75,7 @@ body {
 
 
 .fakeScreen {
-  background-color: black;
-  background-image: radial-gradient(
-    rgba(0, 150, 0, 0.75), black 120%
-  );
-  height: 100vh;;
+  background-color: #151515;
   box-sizing: border-box;
   width: 1100px;
   margin: auto;
