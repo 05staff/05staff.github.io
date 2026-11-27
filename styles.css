@@ -88,9 +88,5 @@ p {
   left: 50%;
   margin-left: -8.5em;
   text-align: left;
-  font-size: 1.25em;
-  font-family: monospace;
   white-space: normal;
-  overflow: hidden;
-  width: 0;
 }
