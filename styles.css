@@ -39,7 +39,7 @@ body {
 }
 
 .fakeButtons {
-  height: 10px;
+  height: 12px;
   width: 10px;
   border-radius: 50%;
   border: 1px solid #000;
