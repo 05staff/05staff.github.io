@@ -1,5 +1,4 @@
-body { 
-  background: lightblue url("tobeadded") no-repeat fixed center; 
-
-
-};
+body {
+ background-image: url("images/background/websitebackground.png");
+ background-color: #cccccc;
+}
