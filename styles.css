@@ -64,6 +64,7 @@ body {
 }
 
 .fakeMenu {
+  margin-top : 2
   width: 1100px;
   box-sizing: border-box;
   height: 25px;
