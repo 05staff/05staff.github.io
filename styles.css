@@ -39,7 +39,7 @@ body {
 }
 
 .fakeButtons {
-  height: 12px;
+  height: 10px;
   width: 10px;
   border-radius: 50%;
   border: 1px solid #000;
@@ -76,7 +76,7 @@ body {
 .fakeScreen {
   background-color: #151515;
   box-sizing: border-box;
-  width: 550px;
+  width: 546px;
   margin: 0 auto;
   padding: 20px;
   border-bottom-left-radius: 5px;
