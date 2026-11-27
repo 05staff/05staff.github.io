@@ -1,8 +1,6 @@
 body {
-  background-color: black;
-  background-image: radial-gradient(
-    rgba(0, 150, 0, 0.75), black 120%
-  );
+background-color: black;
+background-image: url("media/backgrounds/bionicbeaverubuntu.png");
   height: 100vh;
   margin: 0;
   overflow: hidden;
