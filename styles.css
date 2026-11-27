@@ -64,15 +64,15 @@ body {
 }
 
 .fakeMenu {
-  width: 1100px;
+  width: 550px;
   box-sizing: border-box;
   height: 25px;
   background-color: #bbb;
-  margin: auto;
-  padding: 20px;
+  margin: 0 auto;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
 }
+
 
 .fakeScreen {
   background-color: #151515;
